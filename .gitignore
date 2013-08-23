@@ -4,3 +4,10 @@
 *.jar
 *.war
 *.ear
+/nbproject/private/
+/build/
+/dist/
+.classpath
+.project
+.settings/
+target/
