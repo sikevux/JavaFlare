@@ -1,21 +1,17 @@
 package se.sikevux;
 
 import com.fasterxml.jackson.core.JsonFactory;
-import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
-import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.URL;
-import java.text.SimpleDateFormat;
 import java.util.Map.Entry;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.net.ssl.HttpsURLConnection;
-import static se.sikevux.JavaFlare.humanReadableByteCount;
 
 /**
  *
@@ -162,9 +158,8 @@ public class JavaFlare {
 					} else if (responseNode.has("zones")) {
 						/**
 						 * We got Zones
-						 * 
-						 * TODO:
-						 * Implement rest of the response values
+						 *
+						 * TODO: Implement rest of the response values
 						 */
 						System.out.println("--- Zones ---");
 						for (int i = 0; i < responseNode.get("zones").get("count").asInt(); i++) {
@@ -195,7 +190,7 @@ public class JavaFlare {
 					} else if (responseNode.has("recs")) {
 						/**
 						 * Handle case with DNS records
-						 * 
+						 *
 						 */
 						System.out.println("recs");
 					} else if (responseNode.has("result")) {
@@ -244,7 +239,7 @@ public class JavaFlare {
 //						if(fieldsOld == fields) {
 //							break;
 //						}
-//						
+//
 //						result = fields.toString().split("\\=", 2);
 //						System.out.println(result[1]);
 //						fieldsOld = fields;
